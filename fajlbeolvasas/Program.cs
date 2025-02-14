@@ -43,12 +43,30 @@
 			int atlag = szint / karakterek.Count;
             Console.WriteLine($"\nA karakterek átlagszintje: {atlag}");
         }
+		static void EroRendezes(List<Karakter> karakterek)
+		{
+			for (int i = 0; i < karakterek.Count-1; i++)
+			{
+				for (int j = i+1; j < karakterek.Count; j++)
+				{
+					if (karakterek[i].Ero > karakterek[j].Ero)
+					{
+						Karakter csere = karakterek[i];
+						karakterek[i] = karakterek[j];
+						karakterek[j] = csere;
+					}
+				}
+			}
+			foreach (var ero in karakterek)
+			{
+                Console.WriteLine(ero);
+            }
+		}
 		static void Main(string[] args)
 		{
 			List<Karakter> karakterek = [];
 			
 			Beolvasas("karakterek.txt", karakterek);
-
 			foreach (var item in karakterek)
 			{
                 Console.WriteLine(item); //Console.WriteLine(item.ToString);
@@ -56,6 +74,7 @@
 
 			LegMagasabbEletero(karakterek);
 			AtlagSzint(karakterek);
+			EroRendezes(karakterek);
 		}
 	}
 }
