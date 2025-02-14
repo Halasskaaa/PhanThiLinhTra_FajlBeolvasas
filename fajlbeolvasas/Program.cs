@@ -89,6 +89,18 @@
 				}
             }
         }
+		static void LegjobbHarom(List<Karakter> karakterek)
+		{
+
+		}
+		static void RangSorolas(List<Karakter> karakterek)
+		{
+
+		}
+		static void CsataSzimulacio(List<Karakter> karakterek)
+		{
+
+		}
 		static void Main(string[] args)
 		{
 			List<Karakter> karakterek = [];
@@ -107,6 +119,12 @@
             MegHaladOtvenet(karakterek);
             Console.WriteLine();
 			KilencFelett(karakterek);
+            Console.WriteLine();
+			LegjobbHarom(karakterek);
+            Console.WriteLine();
+			RangSorolas(karakterek);
+            Console.WriteLine();
+			CsataSzimulacio(karakterek);
         }
 	}
 }
