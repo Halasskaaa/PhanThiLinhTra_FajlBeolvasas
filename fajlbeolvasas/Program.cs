@@ -62,6 +62,22 @@
                 Console.WriteLine(ero);
             }
 		}
+		static void MegHaladOtvenet(List<Karakter> karakterek)
+		{
+			bool ivh = false;
+			foreach (var kar in karakterek)
+			{
+				if (kar.Ero > 50)
+				{
+					ivh = true;
+                    Console.WriteLine($"{ivh}: {kar.Nev} ereje meghaladja az ötvenet.");
+                }
+				else
+				{
+					Console.WriteLine($"{ivh}: {kar.Nev} ereje nem meghaladja az ötvenet.");
+				}
+			}
+		}
 		static void Main(string[] args)
 		{
 			List<Karakter> karakterek = [];
@@ -74,7 +90,10 @@
 
 			LegMagasabbEletero(karakterek);
 			AtlagSzint(karakterek);
-			EroRendezes(karakterek);
+            Console.WriteLine();
+            EroRendezes(karakterek);
+            Console.WriteLine();
+            MegHaladOtvenet(karakterek);
 		}
 	}
 }
