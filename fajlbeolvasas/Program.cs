@@ -20,15 +20,6 @@
 				karakterek.Add(karakter);
 			}
 		}
-
-		class BootlegList<T>
-		{
-			private T[] elements;
-			public T
-				this[int index]
-			{ get { return elements[index]; } set { elements[index] = value; } }
-		}
-
 		static void LegMagasabbEletero(List<Karakter> karakterek)
 		{
 			Karakter mhp = karakterek[0];
@@ -41,11 +32,16 @@
 			}
             Console.WriteLine($"\nLegmagasabb életerő: {mhp.Eletero}");
             Console.WriteLine(mhp);
-			//Karakter vmi = karakterek[2];
-		    //Console.WriteLine(vmi);
-			//var names = karakterek.Select(it => it.Szint);
-			//int maxHP = karakterek.Select(it => it.Eletero).Max();
-			//Console.WriteLine(maxHP);
+        }
+		static void AtlagSzint(List<Karakter> karakterek)
+		{
+			int szint = 0;
+			foreach (var i in karakterek)
+			{
+				szint += i.Szint;
+			}
+			int atlag = szint / karakterek.Count;
+            Console.WriteLine($"\nA karakterek átlagszintje: {atlag}");
         }
 		static void Main(string[] args)
 		{
@@ -59,6 +55,7 @@
 			}
 
 			LegMagasabbEletero(karakterek);
+			AtlagSzint(karakterek);
 		}
 	}
 }
