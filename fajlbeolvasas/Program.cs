@@ -78,6 +78,17 @@
 				}
 			}
 		}
+		static void KilencFelett(List<Karakter> karakterek)
+		{
+            // Nem volt szükséges új Classra
+            foreach (var lvl in karakterek)
+            {
+                if (lvl.Szint > 8)
+				{
+					Console.WriteLine(lvl);
+				}
+            }
+        }
 		static void Main(string[] args)
 		{
 			List<Karakter> karakterek = [];
@@ -94,6 +105,8 @@
             EroRendezes(karakterek);
             Console.WriteLine();
             MegHaladOtvenet(karakterek);
-		}
+            Console.WriteLine();
+			KilencFelett(karakterek);
+        }
 	}
 }
